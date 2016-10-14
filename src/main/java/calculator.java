@@ -19,7 +19,7 @@ public class calculator {
 			int number = toInt(item);
 			if(number < 0) {
 				neg += " " + item;
-			} else {
+			} else if (number <= 1000) {
 				total += number;
 			}
 		}
