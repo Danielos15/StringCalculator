@@ -3,11 +3,13 @@ package calculator;
 public class calculator {
 	
 	public static int add(String text) {
+		String delimeter = getDelimiter(text);
+		text = clean(text);
 		if (text.equals("")) {
 			return 0;
 		} else {
-			text = text.replace("\n", ",");
-			String []numbers = text.split(",");
+			text = text.replace("\n", delimeter);
+			String []numbers = text.split(delimeter);
 			return sumOf(numbers);
 		}
 	}
@@ -31,5 +33,20 @@ public class calculator {
 	
 	private static int toInt (String input) {
 		return Integer.parseInt(input);
+	}
+	
+	private static String getDelimiter(String input) {
+		if (input.startsWith("//")) {
+			return input.substring(2,3);
+		}
+		return ",";
+	}
+	
+	private static String clean(String input) {
+		if (input.startsWith("//")) {
+			return input.substring(3);
+			
+		}
+		return input;
 	}
 }

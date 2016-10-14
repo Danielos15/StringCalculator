@@ -62,4 +62,9 @@ public class calculatorTest {
 		assertEquals(2, calculator.add("1001,2"));
 	}
 	
+	@Test
+	public void testDelimiterGiven() {
+		assertEquals(4, calculator.add("//;1\n1;2"));
+	}
+	
 }
