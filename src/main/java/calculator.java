@@ -7,9 +7,20 @@ public class calculator {
 			return 0;
 		} else if (text.contains(",")) {
 			String []numbers = text.split(",");
-			return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+			return sumOf(numbers);
 		} else {
 			return 1;
 		}
+	}
+	
+	private static int sumOf (String []numbers) {
+		int total = 0;
+		for (String item : numbers) {
+			total += toInt(item);
+		}
+		return total;
+	} 
+	private static int toInt (String input) {
+		return Integer.parseInt(input);
 	}
 }

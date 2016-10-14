@@ -20,5 +20,19 @@ public class calculatorTest {
 		assertEquals(3, calculator.add("1,2"));
 	}
 	
+	@Test
+	public void testMultipleNumbersOne() {
+		assertEquals(8, calculator.add("5,2,1"));
+	}
+	
+	@Test
+	public void testMultipleNumbersTwo() {
+		assertEquals(5, calculator.add("1,1,2,1"));
+	}
+	
+	@Test
+	public void testMultipleNumbersThree() {
+		assertEquals(12, calculator.add("6,2,1,2,1"));
+	}
 	
 }
