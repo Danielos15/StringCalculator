@@ -14,8 +14,17 @@ public class calculator {
 	
 	private static int sumOf (String []numbers) {
 		int total = 0;
+		String neg = "";
 		for (String item : numbers) {
-			total += toInt(item);
+			int number = toInt(item);
+			if(number < 0) {
+				neg += " " + item;
+			} else {
+				total += number;
+			}
+		}
+		if (neg != "") {
+			throw new IllegalArgumentException ("Negatives not allowed:" + neg);
 		}
 		return total;
 	} 

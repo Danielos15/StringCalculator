@@ -45,4 +45,16 @@ public class calculatorTest {
 		assertEquals(12, calculator.add("6,2,1,2\n1"));
 	}
 	
+	@Test
+	public void testNegativeNumbers() {
+		String error = "";
+		try {
+			calculator.add("6,2,-1,2,1");
+		}
+		catch (Exception x) {
+			error = x.getMessage();
+		}
+		assertEquals("Negatives not allowed: -1", error);
+	}
+	
 }
