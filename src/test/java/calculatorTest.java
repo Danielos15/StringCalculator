@@ -35,4 +35,14 @@ public class calculatorTest {
 		assertEquals(12, calculator.add("6,2,1,2,1"));
 	}
 	
+	@Test
+	public void testHandleNewLineOne() {
+		assertEquals(12, calculator.add("6,2\n1,2,1"));
+	}
+	
+	@Test
+	public void testHandleNewLineTwo() {
+		assertEquals(12, calculator.add("6,2,1,2\n1"));
+	}
+	
 }

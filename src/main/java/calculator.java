@@ -5,11 +5,10 @@ public class calculator {
 	public static int add(String text) {
 		if (text.equals("")) {
 			return 0;
-		} else if (text.contains(",")) {
+		} else {
+			text = text.replace("\n", ",");
 			String []numbers = text.split(",");
 			return sumOf(numbers);
-		} else {
-			return 1;
 		}
 	}
 	
@@ -20,6 +19,7 @@ public class calculator {
 		}
 		return total;
 	} 
+	
 	private static int toInt (String input) {
 		return Integer.parseInt(input);
 	}
